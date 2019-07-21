@@ -36,6 +36,7 @@ class GamesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    /* Content-Type : application/json */
     public function store(Request $request)
     {
         $game = new Game;
@@ -78,6 +79,7 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /* Content-Type : application/json */
     public function update(Request $request, $id)
     {
         $game = Game::find($id);
