@@ -17,7 +17,8 @@ class GamesController extends Controller
     {
         $games = Game::all();
 
-        return $games;
+        // JsonResponse ResponseFactory->json()
+        return response()->json($games);
     }
 
     /**
@@ -36,6 +37,7 @@ class GamesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    /* Content-Type : application/json */
     public function store(Request $request)
     {
         $game = new Game;
@@ -44,7 +46,8 @@ class GamesController extends Controller
         $game->genre = $request->genre;
         $game->save();
 
-        return $game;
+        // JsonResponse ResponseFactory->json()
+        return response()->json($game);
     }
 
     /**
@@ -57,7 +60,8 @@ class GamesController extends Controller
     {
         $game = Game::find($id);
 
-        return $game;
+        // JsonResponse ResponseFactory->json()
+        return response()->json($game);
     }
 
     /**
@@ -78,6 +82,7 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /* Content-Type : application/json */
     public function update(Request $request, $id)
     {
         $game = Game::find($id);
